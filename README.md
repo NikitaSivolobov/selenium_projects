@@ -1,2 +1,3 @@
 # selenium_projects
-Тесты паттерн Page Object, для запуска в папку тест добавить chromedriver или geckodriver
+Автотесты на python и selenium с использованием паттерна Page Object,
+для запуска автотестов в папку test добавить chromedriver или geckodriver
