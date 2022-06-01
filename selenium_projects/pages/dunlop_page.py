@@ -22,4 +22,4 @@ class DunlopPage(BasePage):
         text_el = self.browser.find_element(*JimDunlopLocators.TITLE_YNGWIE_MALMSTEEN)
         text = text_el.text
 
-        assert "YNGWIE MALMSTEEN 1.52MM" == text, f"Нужный медиатор не выбран"
+        assert "YNGWIE MALMSTEEN 1.5MM" == text, f"Нужный медиатор не выбран"
