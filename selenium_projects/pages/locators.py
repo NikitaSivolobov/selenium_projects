@@ -15,3 +15,10 @@ class JimDunlopLocators():
     VIEW_MORE_ARTIST_SERIES = (By.XPATH, '/html/body/div[3]/div[2]/div/div[15]/div[1]/div/a/span')
     YNGWIE_MALMSTEEN_1_5 = (By.XPATH, '//*[@id="product-listing-container"]/form/ul/li[1]/article/div/h4/a')
     TITLE_YNGWIE_MALMSTEEN = (By.XPATH, "/html/body/div[3]/div[1]/div/div/div[1]/section[2]/div/div/h1")
+
+class YandexLocators():
+    SEARCH_FIELD = (By.CLASS_NAME, 'input__control')
+    HINT_FIELD = ((By.CLASS_NAME, 'mini-suggest__popup'))
+    SEARCH_RESULTS = (By.CLASS_NAME, 'serp-item')
+
+

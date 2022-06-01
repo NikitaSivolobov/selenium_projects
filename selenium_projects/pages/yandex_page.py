@@ -1,13 +1,15 @@
 from .base_page import BasePage
-from .locators import JimDunlopLocators
+from .locators import YandexLocators
 
 
-class DunlopPage(BasePage):
-    def go_to_malmsteen_picks(self):
-        link = self.browser.find_element(*JimDunlopLocators.PRODUCTS_MENU)
+class YandexPage(BasePage):
+    def should_be_search_field(self):
+        assert self.is_element_present(*YandexLocators.SEARCH_FIELD), "Поле поиска не появилось"
+
+    def tensor_search(self):
+        link = self.browser.find_element(*YandexLocators.SEARCH_RESULTS)
         link.click()
-        self.browser.execute_script("window.scrollBy(0, 800);")
-
+        
         link = self.browser.find_element(*JimDunlopLocators.VIEW_MORE_GUITAR_PICKS)
         link.click()
         self.browser.execute_script("window.scrollBy(0, 7600);")
