@@ -1,4 +1,4 @@
-from .pages.dunlop_page import DunlopPage
+from pages.dunlop_page import DunlopPage
 import time
 
 

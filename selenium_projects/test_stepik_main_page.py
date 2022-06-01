@@ -1,6 +1,6 @@
-from .pages.main_stepik_page import MainPage
-from .pages.login_stepik_page import LoginPage
-from .pages.dunlop_page import DunlopPage
+from pages.main_stepik_page import MainPage
+from pages.login_stepik_page import LoginPage
+from pages.dunlop_page import DunlopPage
 # import time
 
 # обновили функцию из задания
