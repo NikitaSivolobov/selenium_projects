@@ -46,12 +46,5 @@ def test_guest_should_be_register_form(browser):
     # time.sleep(10)
 
 
-def test_yngwie_malmsteen_1_5_pick(browser):
-    link = "https://www.jimdunlop.com/"
-    page = DunlopPage(browser, link)
-    page.open()
-    page.go_to_malmsteen_picks()
-    # time.sleep(10)
-
 if __name__ == '__main__':
     pytest.main()

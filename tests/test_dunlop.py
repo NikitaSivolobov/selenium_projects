@@ -7,7 +7,7 @@ def test_yngwie_malmsteen_1_5_pick(browser):
     page = DunlopPage(browser, link)
     page.open()
     page.go_to_malmsteen_picks()
-    time.sleep(5)
+
 
 if __name__ == '__main__':
     pytest.main()
