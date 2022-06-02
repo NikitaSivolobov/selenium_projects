@@ -29,4 +29,4 @@ class YandexPage(BasePage):
         print()
         print(*list_link[:5], sep="\n")
 
-        # assert self.browser.find_element(*YandexLocators.SEARCH_RESULTS_NUM), 'tensor.ru отсутствует'
+        assert self.browser.find_element(*YandexLocators.SEARCH_RESULTS_NUM), 'tensor.ru отсутствует'
