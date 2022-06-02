@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
@@ -19,8 +21,12 @@ class YandexPage(BasePage):
     def tensor_search(self):
         self.browser.find_element(*YandexLocators.SEARCH_FIELD).send_keys(Keys.ENTER)
         result_links = self.browser.find_elements(By.XPATH, '//div[@class="VanillaReact OrganicTitle OrganicTitle_wrap Typo Typo_text_l Typo_line_m organic__title-wrapper"]/a')
+
+        list_link = []
         for element in result_links:
             item_link = element.get_attribute('href')
-            print(item_link)
+            list_link.append(item_link)
+        print()
+        print(*list_link[:5], sep="\n")
 
         # assert self.browser.find_element(*YandexLocators.SEARCH_RESULTS_NUM), 'tensor.ru отсутствует'

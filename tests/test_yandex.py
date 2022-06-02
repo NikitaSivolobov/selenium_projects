@@ -17,6 +17,5 @@ def test_tensor_search(browser):
     page.tensor_search()
 
 
-
 if __name__ == '__main__':
     pytest.main()
