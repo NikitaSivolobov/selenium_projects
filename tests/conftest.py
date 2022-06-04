@@ -32,6 +32,6 @@ def browser(request):
         browser = webdriver.Chrome(options=options)
 
     yield browser
-    print("\nquit browser..")
+    print("\n======\nquit browser..")
     browser.quit()
 

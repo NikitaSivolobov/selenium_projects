@@ -23,3 +23,7 @@ class DunlopPage(BasePage):
         text = text_el.text
 
         assert "YNGWIE MALMSTEEN 1.5MM" == text, f"Нужный медиатор не выбран"
+
+        print()
+        print("Тест на проверку наличия медиатора YNGWIE MALMSTEEN 1.5MM прошёл")
+        print("======")
