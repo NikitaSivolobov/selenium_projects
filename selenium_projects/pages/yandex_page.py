@@ -26,7 +26,16 @@ class YandexPage(BasePage):
         for element in result_links:
             item_link = element.get_attribute('href')
             list_link.append(item_link)
+
         print()
+        print("Ссылки в первых 5 результатах поиска:")
         print(*list_link[:5], sep="\n")
 
-        assert self.browser.find_element(*YandexLocators.SEARCH_RESULTS_NUM), 'tensor.ru отсутствует'
+        link = 'https://'+ YandexLocators.SEARCH_RESULTS_NUM + '/'
+
+        assert link in list_link[:5], 'tensor.ru отсутствует'
+
+        print()
+        print("Тест на проверку наличия в первых 5 результатах\nпоиска ссылки на " + YandexLocators.SEARCH_RESULTS_NUM, "прошёл ====> УСПЕШНО!!!")
+
+        # assert self.browser.find_element(*YandexLocators.SEARCH_RESULTS_NUM), 'tensor.ru отсутствует'
