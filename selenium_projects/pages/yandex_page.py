@@ -3,11 +3,8 @@ import time
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
-
 from .base_page import BasePage
 from .locators import YandexLocators
-
-
 
 
 class YandexPage(BasePage):
@@ -20,7 +17,8 @@ class YandexPage(BasePage):
 
     def tensor_search(self):
         self.browser.find_element(*YandexLocators.SEARCH_FIELD).send_keys(Keys.ENTER)
-        result_links = self.browser.find_elements(By.XPATH, '//div[@class="VanillaReact OrganicTitle OrganicTitle_wrap Typo Typo_text_l Typo_line_m organic__title-wrapper"]/a')
+        result_links = self.browser.find_elements(By.XPATH,
+                                                  '//div[@class="VanillaReact OrganicTitle OrganicTitle_wrap Typo Typo_text_l Typo_line_m organic__title-wrapper"]/a')
 
         list_link = []
         for element in result_links:
@@ -28,14 +26,14 @@ class YandexPage(BasePage):
             list_link.append(item_link)
 
         print()
-        print("Ссылки в первых 5 результатах поиска:")
-        print(*list_link[:5], sep="\n")
+        print("Ссылки в первых " + str(YandexLocators.SEARCH_LAST) + " результатах поиска:")
+        print(*list_link[YandexLocators.SEARCH_START:YandexLocators.SEARCH_LAST], sep="\n")
 
-        link = 'https://'+ YandexLocators.SEARCH_RESULTS_NUM + '/'
+        link = 'https://' + YandexLocators.SEARCH_RESULTS_NUM + '/'
 
-        assert link in list_link[:5], 'tensor.ru отсутствует'
+        assert link in list_link[YandexLocators.SEARCH_START:YandexLocators.SEARCH_LAST], 'tensor.ru отсутствует'
 
         print()
-        print("Тест на проверку наличия в первых 5 результатах\nпоиска ссылки на " + YandexLocators.SEARCH_RESULTS_NUM, "прошёл ====> УСПЕШНО!!!")
+        print("Тест на проверку наличия в первых " + str(YandexLocators.SEARCH_LAST) + " результатах\nпоиска ссылки на "
+              + YandexLocators.SEARCH_RESULTS_NUM, "прошёл ====> УСПЕШНО!!!")
 
-        # assert self.browser.find_element(*YandexLocators.SEARCH_RESULTS_NUM), 'tensor.ru отсутствует'

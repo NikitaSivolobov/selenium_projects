@@ -20,6 +20,8 @@ class YandexLocators():
     SEARCH_FIELD = (By.CLASS_NAME, 'input__control')
     HINT_FIELD = (By.CLASS_NAME, 'mini-suggest__popup')
     SEARCH_RESULTS_ALL = (By.CSS_SELECTOR, 'serp-list')
+    SEARCH_START = 0
+    SEARCH_LAST = 5
     SEARCH_RESULTS_NUM = 'tensor.ru'
 
 
