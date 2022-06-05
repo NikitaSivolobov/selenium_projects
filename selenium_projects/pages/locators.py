@@ -22,7 +22,7 @@ class YandexLocators():
     SEARCH_RESULTS_ALL = (By.CSS_SELECTOR, 'serp-list')
     SEARCH_START = 0
     SEARCH_LAST = 5
-    SEARCH_RESULTS_NUM = 'tensor.ru'
+    SEARCH_RESULT = 'tensor.ru'
 
 
 

@@ -26,14 +26,20 @@ class YandexPage(BasePage):
             list_link.append(item_link)
 
         print()
-        print("Ссылки в первых " + str(YandexLocators.SEARCH_LAST) + " результатах поиска:")
+        print("Ссылки c " + str(YandexLocators.SEARCH_START+1) + " по " + str(YandexLocators.SEARCH_LAST) +
+              " в списке результатов поиска:")
         print(*list_link[YandexLocators.SEARCH_START:YandexLocators.SEARCH_LAST], sep="\n")
 
-        link = 'https://' + YandexLocators.SEARCH_RESULTS_NUM + '/'
 
-        assert link in list_link[YandexLocators.SEARCH_START:YandexLocators.SEARCH_LAST], 'tensor.ru отсутствует'
+        flag_results = False
+        for link in list_link[YandexLocators.SEARCH_START:YandexLocators.SEARCH_LAST]:
+            if YandexLocators.SEARCH_RESULT in link:
+                flag_results = True
+                break
+
+        assert flag_results, f'{YandexLocators.SEARCH_RESULT} отсутствует'
 
         print()
-        print("Тест на проверку наличия в первых " + str(YandexLocators.SEARCH_LAST) + " результатах\nпоиска ссылки на "
-              + YandexLocators.SEARCH_RESULTS_NUM, "прошёл ====> УСПЕШНО!!!")
-
+        print("Тест на проверку наличия " + YandexLocators.SEARCH_RESULT, "в списке результатов поиска\nс "
+              + str(YandexLocators.SEARCH_START+1) + " по " + str(YandexLocators.SEARCH_LAST) +
+              " ссылки прошёл ====> УСПЕШНО!!!")
