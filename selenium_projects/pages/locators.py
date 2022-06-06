@@ -28,7 +28,7 @@ class YandexLocators():
     IMAGES_LINK = (By.XPATH, '//a[@data-id="images"]/div[@class="services-new__item-title"]')
     IMAGES_URL = 'https://yandex.ru/images/'
     IMAGES_FIRST_CATEGORY = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
-    IMAGES_TEXT_FIRST_CATEGORY = (By.XPATH, "//input[@class='input__control mini-suggest__input']")
+    IMAGES_TEXT_FIRST_CATEGORY = (By.XPATH, "/html/head/title")
     IMAGE_FIRST = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
     IMAGE_SECOND = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
     IMAGE_BACK = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")

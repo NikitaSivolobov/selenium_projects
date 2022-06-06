@@ -60,9 +60,24 @@ class YandexPage(BasePage):
         self.browser.switch_to.window(self.browser.window_handles[1])
         first_category = self.browser.find_element(*YandexLocators.IMAGES_FIRST_CATEGORY).text
         self.browser.find_element(*YandexLocators.IMAGES_FIRST_CATEGORY).click()
-        text_search_field = self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).text
-        print(text_search_field)
-        time.sleep(3)
+        time.sleep(1)
+        print()
+        print()
+        print(first_category)
+        print(self.browser.title)
+        assert first_category in self.browser.title, f"{first_category} is not presented in URL"
+
+        print(f"Мы переходим на 1 категорию {first_category} ====> УСПЕШНО!!!")
+
+        # self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).send_keys(
+        #     Keys.CONTROL + "a")
+        # self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).\
+        #     send_keys(Keys.CONTROL + "c")
+        #
+        # text_search_field.send_keys(Keys.CONTROL + "v")
+        # print(text_search_field)
+        #
+        # time.sleep(3)
         #text_search_field = self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).click().send_keys(Keys.CONTROL + "a").send_keys(Keys.CONTROL + "c")
         #text_search_field = self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).send_keys(Keys.CONTROL + "a").send_keys(Keys.CONTROL + "c")
         #print(text_search_field)
