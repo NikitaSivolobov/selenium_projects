@@ -20,9 +20,18 @@ class YandexLocators():
     SEARCH_FIELD = (By.CLASS_NAME, 'input__control')
     HINT_FIELD = (By.CLASS_NAME, 'mini-suggest__popup')
     SEARCH_RESULTS_ALL = (By.CSS_SELECTOR, 'serp-list')
+    SEARCH_RESULT_NUM = (By.XPATH, '//div[@class="VanillaReact OrganicTitle OrganicTitle_wrap Typo Typo_text_l Typo_line_m organic__title-wrapper"]/a')
     SEARCH_START = 0
     SEARCH_LAST = 5
     SEARCH_RESULT = 'tensor.ru'
+
+    IMAGES_LINK = (By.XPATH, '//a[@data-id="images"]/div[@class="services-new__item-title"]')
+    IMAGES_URL = 'https://yandex.ru/images/'
+    IMAGES_FIRST_CATEGORY = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
+    IMAGES_TEXT_FIRST_CATEGORY = (By.XPATH, "//input[@class='input__control mini-suggest__input']")
+    IMAGE_FIRST = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
+    IMAGE_SECOND = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
+    IMAGE_BACK = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
 
 
 
