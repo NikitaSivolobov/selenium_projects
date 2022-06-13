@@ -110,7 +110,7 @@ class YandexPage(BasePage):
         #     Keys.CONTROL + "a")
         # self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).\
         #     send_keys(Keys.CONTROL + "c")
-        #
+
         # text_search_field.send_keys(Keys.CONTROL + "v")
         # print(text_search_field)
         #

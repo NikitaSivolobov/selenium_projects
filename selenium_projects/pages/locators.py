@@ -39,6 +39,7 @@ class YandexLocators():
     BUTTON_NEXT = (By.XPATH, "//div[contains(@class, 'CircleButton_type_next')]")
     BUTTON_PREV1 = (By.XPATH, "//div[contains(@class, 'CircleButton_type_prev')]")
 
+
     IMAGE_FIRST = (By.CSS_SELECTOR, "img.MMImage-Origin")
     IMAGE_SECOND = (By.CSS_SELECTOR, "img.MMImage-Origin")
     IMAGE_BACK = (By.CSS_SELECTOR, "img.MMImage-Origin")
