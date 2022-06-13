@@ -28,6 +28,12 @@ def test_yandex_images_url(browser):
     page.open()
     page.should_be_images_url()
 
+def test_yandex_images_first_category(browser):
+    link = "https://www.yandex.ru/"
+    page = YandexPage(browser, link)
+    page.open()
+    page.should_be_images_first_category()
+
 def test_yandex_images_first_second_back(browser):
     link = "https://www.yandex.ru/"
     page = YandexPage(browser, link)
