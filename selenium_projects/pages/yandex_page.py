@@ -81,7 +81,7 @@ class YandexPage(BasePage):
     def should_be_images_equal(self):
         """
             При переходе в 1 категорию картинок в разделе "Картинки" Яндекса,
-            действительно открывается 1 категория
+            1 открытая картинка совпадает после перехода на следующую картинку и возврата назад
         """
         self.browser.find_element(*YandexLocators.IMAGES_LINK).click()
         self.browser.switch_to.window(self.browser.window_handles[1])
