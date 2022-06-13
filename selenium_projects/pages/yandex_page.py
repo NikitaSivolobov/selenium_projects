@@ -83,6 +83,7 @@ class YandexPage(BasePage):
             При переходе в 1 категорию картинок в разделе "Картинки" Яндекса,
             1 открытая картинка совпадает после перехода на следующую картинку и возврата назад
         """
+        start = time.time()
         self.browser.find_element(*YandexLocators.IMAGES_LINK).click()
         self.browser.switch_to.window(self.browser.window_handles[1])
         first_category = self.browser.find_element(*YandexLocators.IMAGES_FIRST_CATEGORY).text
@@ -91,9 +92,9 @@ class YandexPage(BasePage):
         self.browser.find_element(*YandexLocators.IMAGES_FROM_FIRST_CATECORY).click()
         time.sleep(0.5)
 
-        assert self.is_element_not_present(*YandexLocators.BUTTON_PREV0),\
+        assert self.is_element_present(*YandexLocators.BUTTON_PREV0),\
             f"Открыто изображение категории: '{first_category}' отличное от первого"
-
+        time.sleep(0.5)
         image_first = self.browser.find_element(*YandexLocators.IMAGE_FIRST_SECOND_BACK).get_attribute('src')
         print(f"Первое изображение: {image_first}")
 
@@ -103,6 +104,9 @@ class YandexPage(BasePage):
 
         assert image_first != image_second, f"Первое и второе изображение категории: '{first_category}' равны"
 
+        # assert self.is_element_not_present(*YandexLocators.BUTTON_PREV0), \
+        #     f"Открыто первое изображение категории: '{first_category}'"
+
         self.browser.find_element(*YandexLocators.BUTTON_PREV1).click()
         image_back = self.browser.find_element(*YandexLocators.IMAGE_FIRST_SECOND_BACK).get_attribute('src')
         print(f"Изображение после возврата: {image_back}")
@@ -110,4 +114,5 @@ class YandexPage(BasePage):
         assert image_first == image_back, f"Изображения {first_category} не равны"
 
         print(f"Изображения {first_category} до перехода и после возврата равны, тест ====> УСПЕШЕН!!!")
-
+        end = time.time()
+        print(f'{end - start:.3}')

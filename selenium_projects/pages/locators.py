@@ -35,7 +35,7 @@ class YandexLocators():
     IMAGES_FIRST_CATEGORY = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
     IMAGES_FROM_FIRST_CATECORY = (By.CSS_SELECTOR, "div.serp-item__preview")
 
-    BUTTON_PREV0 = (By.XPATH, "CircleButton CircleButton_disabled")
+    BUTTON_PREV0 = (By.XPATH, "//div[contains(@class, 'CircleButton_disabled')]")
     BUTTON_NEXT = (By.XPATH, "//div[contains(@class, 'CircleButton_type_next')]")
     BUTTON_PREV1 = (By.XPATH, "//div[contains(@class, 'CircleButton_type_prev')]")
 
