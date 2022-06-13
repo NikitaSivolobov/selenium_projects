@@ -106,21 +106,3 @@ class YandexPage(BasePage):
 
         print(f"Изображения {first_category} до перехода и после возврата равны, тест ====> УСПЕШЕН!!!")
 
-        # self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).send_keys(
-        #     Keys.CONTROL + "a")
-        # self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).\
-        #     send_keys(Keys.CONTROL + "c")
-
-        # text_search_field.send_keys(Keys.CONTROL + "v")
-        # print(text_search_field)
-        #
-        # time.sleep(3)
-        #text_search_field = self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).click().send_keys(Keys.CONTROL + "a").send_keys(Keys.CONTROL + "c")
-        #text_search_field = self.browser.find_element(*YandexLocators.IMAGES_TEXT_FIRST_CATEGORY).send_keys(Keys.CONTROL + "a").send_keys(Keys.CONTROL + "c")
-        #print(text_search_field)
-
-        # assert YandexLocators.IMAGES_URL in self.browser.current_url, "Images is not presented in URL"
-        # print()
-        # print(f"Мы переходим на url {YandexLocators.IMAGES_URL} ====> УСПЕШНО!!!")
-
-
