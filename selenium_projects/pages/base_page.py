@@ -17,3 +17,10 @@ class BasePage():
         except NoSuchElementException:
             return False
         return True
+
+    def is_element_not_present(self, how, what):
+        try:
+            self.browser.find_element(how, what)
+        except NoSuchElementException:
+            return True
+        return False

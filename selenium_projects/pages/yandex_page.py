@@ -88,18 +88,23 @@ class YandexPage(BasePage):
         first_category = self.browser.find_element(*YandexLocators.IMAGES_FIRST_CATEGORY).text
         print(f"Первая категория раздела <Картинки> ====> {first_category}")
         self.browser.find_element(*YandexLocators.IMAGES_FIRST_CATEGORY).click()
-        self.browser.find_element(*YandexLocators.IMAGES_ALL_FIRST).click()
-        image_first = self.browser.find_element(*YandexLocators.IMAGE_FIRST).get_attribute('src')
+        self.browser.find_element(*YandexLocators.IMAGES_FROM_FIRST_CATECORY).click()
+        time.sleep(0.5)
+
+        assert self.is_element_not_present(*YandexLocators.BUTTON_PREV0),\
+            f"Открыто изображение категории: '{first_category}' отличное от первого"
+
+        image_first = self.browser.find_element(*YandexLocators.IMAGE_FIRST_SECOND_BACK).get_attribute('src')
         print(f"Первое изображение: {image_first}")
 
         self.browser.find_element(*YandexLocators.BUTTON_NEXT).click()
-        image_second = self.browser.find_element(*YandexLocators.IMAGE_SECOND).get_attribute('src')
+        image_second = self.browser.find_element(*YandexLocators.IMAGE_FIRST_SECOND_BACK).get_attribute('src')
         print(f"Следующее изображение: {image_second}")
 
         assert image_first != image_second, f"Первое и второе изображение категории: '{first_category}' равны"
 
         self.browser.find_element(*YandexLocators.BUTTON_PREV1).click()
-        image_back = self.browser.find_element(*YandexLocators.IMAGE_BACK).get_attribute('src')
+        image_back = self.browser.find_element(*YandexLocators.IMAGE_FIRST_SECOND_BACK).get_attribute('src')
         print(f"Изображение после возврата: {image_back}")
 
         assert image_first == image_back, f"Изображения {first_category} не равны"

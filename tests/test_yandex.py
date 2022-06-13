@@ -1,3 +1,5 @@
+import pytest
+
 from selenium_projects.pages.yandex_page import YandexPage
 import time
 

@@ -33,18 +33,11 @@ class YandexLocators():
     IMAGES_LINK = (By.XPATH, '//a[@data-id="images"]/div[@class="services-new__item-title"]')
     IMAGES_URL = 'https://yandex.ru/images/'
     IMAGES_FIRST_CATEGORY = (By.XPATH, "//div[@class='PopularRequestList-Item PopularRequestList-Item_pos_0']")
-    IMAGES_ALL_FIRST = (By.CSS_SELECTOR, "div.serp-item__preview")
+    IMAGES_FROM_FIRST_CATECORY = (By.CSS_SELECTOR, "div.serp-item__preview")
 
     BUTTON_PREV0 = (By.XPATH, "CircleButton CircleButton_disabled")
     BUTTON_NEXT = (By.XPATH, "//div[contains(@class, 'CircleButton_type_next')]")
     BUTTON_PREV1 = (By.XPATH, "//div[contains(@class, 'CircleButton_type_prev')]")
 
-
-    IMAGE_FIRST = (By.CSS_SELECTOR, "img.MMImage-Origin")
-    IMAGE_SECOND = (By.CSS_SELECTOR, "img.MMImage-Origin")
-    IMAGE_BACK = (By.CSS_SELECTOR, "img.MMImage-Origin")
-
-
-
-
+    IMAGE_FIRST_SECOND_BACK = (By.CSS_SELECTOR, "img.MMImage-Origin")
 
