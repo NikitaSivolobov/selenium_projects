@@ -14,12 +14,14 @@ class YandexPage(BasePage):
         assert self.is_element_present(*YandexLocators.SEARCH_FIELD), "Поле поиска не появилось"
         print(f"Поле поиска присутствует на странице ====> УСПЕX!!!")
 
+
     def should_be_images_link(self):
         """Раздел "Картинки" присутствует на главной странице Яндекса"""
 
         link = self.browser.find_element(*YandexLocators.IMAGES_LINK)
         assert self.is_element_present(*YandexLocators.IMAGES_LINK), 'Ссылка "Картинки" отсутствует на странице'
         print(f"Ссылка <<{link.text}>> присутствует на странице ====> УСПЕX!!!")
+
 
     def should_be_images_url(self):
         """
@@ -31,11 +33,13 @@ class YandexPage(BasePage):
         assert YandexLocators.IMAGES_URL in self.browser.current_url, "Images is not presented in URL"
         print(f"Мы переходим на url {YandexLocators.IMAGES_URL} ====> УСПЕШНО!!!")
 
+
     def should_be_tensor_search(self):
         """При вводе в поиск "тензор" появляется таблица с подсказками"""
 
         self.browser.find_element(*YandexLocators.SEARCH_FIELD).send_keys("тензор")
         assert self.is_element_present(*YandexLocators.HINT_FIELD), "Таблица с подсказками (suggest) не появилась"
+
 
     def tensor_search(self):
         """Проверка наличия tensor.ru в первых 5 результатах поиска (можно задавать любой диапазон поиска)"""
@@ -63,6 +67,7 @@ class YandexPage(BasePage):
               " в списке результатов поиска:")
         print(*list_link[YandexLocators.SEARCH_START:YandexLocators.SEARCH_LAST], sep="\n")
 
+
     def should_be_images_first_category(self):
         """
             При переходе в 1 категорию картинок в разделе "Картинки" Яндекса,
@@ -77,6 +82,7 @@ class YandexPage(BasePage):
         assert first_category in self.browser.title, f"{first_category} is not presented in URL"
 
         print(f"Мы переходим на 1 категорию {first_category} ====> УСПЕШНО!!!")
+
 
     def should_be_images_equal(self):
         """
