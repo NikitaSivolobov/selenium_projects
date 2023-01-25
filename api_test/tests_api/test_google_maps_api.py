@@ -4,7 +4,7 @@ import json
 from requests import Response
 
 from api_test.utils.checking import Checking
-from api_test.utils.api import Google_maps_api
+from api_test.utils.api_google_maps import Google_maps_api
 
 """Создание, изменение и удаление новой локации"""
 @allure.epic("Test create new location")

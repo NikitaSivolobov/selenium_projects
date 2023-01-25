@@ -21,7 +21,7 @@ class Checking():
     @staticmethod
     def check_json_token(response: Response, expected_value):
         token = json.loads(response.text)
-        assert list(token) == expected_value
+        assert list(token) == expected_value, "Поля не соответствуют"
         print("Все поля присутствуют")
 
 
@@ -31,7 +31,7 @@ class Checking():
     def check_json_value(response: Response, field_name, expected_value):
         check = response.json()
         check_info = check.get(field_name)
-        assert check_info == expected_value
+        assert check_info == expected_value, "Значения полей не соответствуют"
         print("Значение поля '" + field_name + "' верно !!!")
 
 

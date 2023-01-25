@@ -31,7 +31,7 @@ class Logger():
         headers_as_dict = dict(result.headers)
 
         data_to_add = f"Response code: {result.status_code}\n"
-        data_to_add += f"Response text: {result.text}\n"
+        data_to_add += f"Response body: {result.text}\n"
         data_to_add += f"Response headers: {headers_as_dict}\n"
         data_to_add += f"Response cookies: {cookies_as_dict}\n"
         data_to_add += f"\n-----\n"
